@@ -1,0 +1,21 @@
+e
+var c
+var p
+set_pgstat_chan 1
+set_pgstat_mode 0
+set_pgstat_chan 0
+set_pgstat_mode 3
+set_max_bandwidth 1333333m
+set_pot_range -900m -900m
+set_cr 590n
+set_autoranging 59n 590n
+cell_on
+meas_loop_ca p c -900m 3m 123m
+pck_start
+pck_add p
+pck_add c
+pck_end
+endloop
+on_finished:
+cell_off
+
